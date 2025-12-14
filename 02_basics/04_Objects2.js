@@ -52,15 +52,31 @@ const user = [
     }
 ];
 
-console.log(tinderUser);
+// console.log(tinderUser);
 
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser));
-console.log(Object.entries(tinderUser));
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser));
+// console.log(Object.entries(tinderUser));
 
-console.log(Object.hasOwnProperty('name'));
+// console.log(Object.hasOwnProperty('name'));
 
-console.log(user[2].lastName);
+// console.log(user[2].lastName);
+
+
+const course = {
+    courseName: "JavaScript",
+    price: 999,
+    courseInstructor: "Himesh Doglaa",
+}
+
+// console.log(course.courseInstructor);
+
+const {courseInstructor: instructor} = course; // object destructuring
+console.log(instructor);
+
+
+
+
 
 
 
