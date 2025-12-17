@@ -39,7 +39,42 @@ function loginUserMessage(username = "Guest") {
 }
 
 // const message = loginUserMessage("konain") // doesnot print anything
-console.log(loginUserMessage("hitesh"));
+// console.log(loginUserMessage("hitesh"));
+
+
+
+function calculateCartPrice(...num1) {   // ... is a rest operator that return value of n number of items in a bundle or array
+    return num1
+}
+
+// console.log(calculateCartPrice(516, 414, 5896, 269));
+
+const user = {
+    username: "konain",
+    price: 599
+}
+
+function handleObject(getObject) {
+    console.log(`Username is ${getObject.username} and the price is ${getObject.price}`);
+    
+}
+
+// handleObject(user)
+// console.log({
+//     username: "konain",
+//     price: 299
+// });
+
+const array = [699, 255, 688, 499]
+
+function handleArray(getArray) {
+    return getArray[3]
+}
+
+// console.log(handleArray(array));
+
+console.log(handleArray([99, 5563, 388, 889, 399, 98, 33]));
+
 
 
 
