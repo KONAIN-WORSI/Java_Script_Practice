@@ -13,10 +13,30 @@
     
 // }
 
-const arr = ["saktiman", "naagraj", "doga", "shaktimaan", "chacha bhatija"];
+// const arr = ["saktiman", "naagraj", "doga", "shaktimaan", "chacha bhatija"];
 
-for (let index = 0; index < arr.length; index++) {
-    const element = arr[index];
-    console.log(element);
+// for (let index = 0; index < arr.length; index++) {
+//     const element = arr[index];
+//     // console.log(element);
+    
+// }
+
+// break and continue
+
+// for (let i = 1; i < 20; i++) {
+//     if (i === 5) {
+//         console.log(`${i} is the best number`);
+//         break;
+//     }
+//     console.log(`Value of i is ${i}`);
+    
+// }
+
+for (let i = 1; i < 20; i++) {
+    if (i === 5) {
+        console.log(`Detected ${i}`)
+        continue;
+    }
+    console.log(`Value of i is ${i}`);
     
 }
