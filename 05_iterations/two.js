@@ -7,6 +7,7 @@ const arr = ["saktiman", "naagraj", "doga", "shaktimaan", "chacha bhatija"];
     
 // }
 
+//Maps
 const map = new Map();
 
 map.set("name", "saktiman");
@@ -17,5 +18,5 @@ map.set("weapon", "lightning");
 
 for (const [key, value] of map) {
     console.log(key, ": ", value);
-    
+
 }
