@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button id="stop">Stop</button>
+    <script>
+        document.getElementById('stop').addEventListener('click', function(){
+            clearTimeout(timeOut)
+            console.log("timeOut stopped!");
+        })
+
+        const changeMe = function() {
+            document.querySelector('h1').innerHTML = "Hello Javascript and welcome to the world of events!"
+            console.log("Changed!");
+        }
+        
+        const timeOut = setTimeout(changeMe, 3000)
+    </script>
+</body>
+</html>
