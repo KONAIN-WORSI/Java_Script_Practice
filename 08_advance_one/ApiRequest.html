@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GitHub Profile Card</title>
+  <style>
+    body {
+      background-color: #212121;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background-color: #333;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-img-top {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #4a90e2;
+      margin-bottom: 15px;
+    }
+
+    .card-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #4a90e2;
+    }
+
+    .card-text {
+      font-size: 16px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4a90e2;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-primary:hover {
+      background-color: #357abd;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <img id="photo" class="card-img-top" src="{photo}" alt="Profile Photo">
+    <div class="card-body">
+      <h5 id="name" class="card-title">{name}</h5>
+      <p class="card-text">Followers: <span id="followers">{followers}</span></p>
+      <a id="profile-link" href="{profile}" class="btn btn-primary" target="_blank">Visit Profile</a>
+    </div>
+  </div>
+  <script>
+    const requestUrl = "https://api.github.com/users/KONAIN-WORSI";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(xhr.responseText);
+
+        // Update DOM elements
+        const photo = document.getElementById('photo').src = data.avatar_url;
+        const name = document.getElementById('name').textContent = data.login;
+        const followers = document.getElementById('followers').textContent = data.followers;
+        const profile = document.getElementById('profile-link').href = data.html_url;
+
+        console.log("Data loaded successfully:", data);
+      } 
+    };
+    xhr.send(); 
+  </script>
+</body>
+
+</html>
